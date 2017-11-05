@@ -1,0 +1,10 @@
+---
+title: Andrex4k.Github.Io
+timezone: Asia/Irkutsk
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
