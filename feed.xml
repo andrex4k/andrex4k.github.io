@@ -7,9 +7,17 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Установка nginx + php-fpm без сервера базы данных в gentoo</title>
+        <description></description>
+        <pubDate>Mon, 06 Nov 2017 04:19:15 +0800</pubDate>
+        <link>/posts/configure-nginx-php-fpm</link>
+        <guid isPermaLink="true">/posts/configure-nginx-php-fpm</guid>
+      </item>
+    
+      <item>
         <title>Использование пасте сервиса termbin</title>
         <description></description>
-        <pubDate>Sun, 05 Nov 2017 04:19:15 +0000</pubDate>
+        <pubDate>Sun, 05 Nov 2017 04:19:15 +0800</pubDate>
         <link>/posts/use-paste-service-termbon</link>
         <guid isPermaLink="true">/posts/use-paste-service-termbon</guid>
       </item>
@@ -17,7 +25,7 @@
       <item>
         <title>Изменение приветсвия при логине в Bash</title>
         <description></description>
-        <pubDate>Sun, 05 Nov 2017 04:19:15 +0000</pubDate>
+        <pubDate>Sun, 05 Nov 2017 04:19:15 +0800</pubDate>
         <link>/posts/simple-bash-scripting-for-login-before-open-the-terminal</link>
         <guid isPermaLink="true">/posts/simple-bash-scripting-for-login-before-open-the-terminal</guid>
       </item>
@@ -25,7 +33,7 @@
       <item>
         <title>Рекурсивная закачка файлов используя wget</title>
         <description></description>
-        <pubDate>Sun, 05 Nov 2017 04:19:15 +0000</pubDate>
+        <pubDate>Sun, 05 Nov 2017 04:19:15 +0800</pubDate>
         <link>/posts/download-recrusive-files-inside-index-of-in-linux-using-wget</link>
         <guid isPermaLink="true">/posts/download-recrusive-files-inside-index-of-in-linux-using-wget</guid>
       </item>
