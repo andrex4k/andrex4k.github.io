@@ -121,7 +121,7 @@
 
           <div class="article-content">
             <h2 id="подготовка">Подготовка:</h2>
-<p>Редактируем ‘USE’ флаги, <code class="highlighter-rouge">/etc/portage/package.use/web</code>:</p>
+<p>Редактируем <code class="highlighter-rouge">USE</code> флаги, <code class="highlighter-rouge">/etc/portage/package.use/web</code>:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dev-lang/php gd zip curl cgi force-cgi-redirect fpm -apache2
 </code></pre></div></div>
 <h2 id="установка">Установка:</h2>
@@ -130,11 +130,11 @@
 </code></pre></div></div>
 <h2 id="настройка">Настройка:</h2>
 <h1 id="настраиваем-php">Настраиваем php:</h1>
-<p>Редакктируем <code class="highlighter-rouge">/etc/php/fpm-php7.1/php-fpm.conf</code>. Приводим его к виду:</p>
+<p>Редактируем <code class="highlighter-rouge">/etc/php/fpm-php7.1/php-fpm.conf</code>. Приводим его к виду:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[global]
 include=/etc/php/fpm-php7.1/fpm.d/*.conf
 </code></pre></div></div>
-<p>Редакируем <code class="highlighter-rouge">/etc/php/fpm-php7.1/php.ini</code>. Конфиг хорошо комментирован и по этому не должно возникнуть проблем с пониманием того что тварим. Приводим его к виду:</p>
+<p>Редакируем <code class="highlighter-rouge">/etc/php/fpm-php7.1/php.ini</code>. Конфиг хорошо комментирован и по этому не должно возникнуть проблем с пониманием того, что тварим. Приводим его к виду:</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">PHP</span><span class="p">]</span>
 <span class="nx">disable_functions</span> <span class="o">=</span> <span class="nb">phpinfo</span><span class="p">,</span> <span class="nb">system</span><span class="p">,</span> <span class="nb">mail</span><span class="p">,</span> <span class="nb">exec</span>
  <span class="nx">max_execution_time</span> <span class="o">=</span> <span class="mi">30</span>
@@ -191,7 +191,7 @@ include=/etc/php/fpm-php7.1/fpm.d/*.conf
 <span class="nx">extension</span><span class="o">=</span><span class="nx">module_name</span><span class="o">.</span><span class="nx">dll</span>
 <span class="o">...</span>
 <span class="p">;</span> <span class="nx">Настраиваем</span> <span class="nx">модули</span>
-<span class="p">;</span> <span class="nx">Все</span> <span class="nx">что</span> <span class="nx">ниже</span> <span class="nx">указано</span> <span class="nx">по</span> <span class="nx">умолчанию</span> <span class="nx">и</span> <span class="nx">некоторые</span> <span class="nx">вещи</span> <span class="nx">могут</span> <span class="nx">быть</span> <span class="nx">ненужны</span> <span class="nx">а</span> <span class="nx">что</span> <span class="nx">то</span> <span class="nx">нужно</span> <span class="nx">изменить</span> <span class="nx">но</span> <span class="nx">и</span> <span class="nx">так</span> <span class="nx">работает</span><span class="p">)</span>
+<span class="p">;</span> <span class="nx">Все</span><span class="p">,</span> <span class="nx">что</span> <span class="nx">ниже</span> <span class="nx">указано</span> <span class="nx">по</span> <span class="nx">умолчанию</span> <span class="nx">и</span> <span class="nx">некоторые</span> <span class="nx">вещи</span> <span class="nx">могут</span> <span class="nx">быть</span> <span class="nx">ненужны</span><span class="p">,</span> <span class="nx">а</span> <span class="nx">что</span> <span class="nx">то</span> <span class="nx">нужно</span> <span class="nx">изменить</span><span class="p">,</span> <span class="nx">но</span> <span class="nx">и</span> <span class="nx">так</span> <span class="nx">работает</span><span class="p">)</span>
 <span class="p">[</span><span class="nx">Pdo_mysql</span><span class="p">]</span>
 <span class="nx">pdo_mysql</span><span class="o">.</span><span class="nx">cache_size</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="nx">pdo_mysql</span><span class="o">.</span><span class="nx">default_socket</span><span class="o">=</span>
@@ -276,7 +276,7 @@ include=/etc/php/fpm-php7.1/fpm.d/*.conf
 <span class="p">[</span><span class="nx">ldap</span><span class="p">]</span>
 <span class="nx">ldap</span><span class="o">.</span><span class="nx">max_links</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 </code></pre></div></div>
-<p>Настраиваем пользователя от которого будет запускаться PHP и сокеты.
+<p>Настраиваем пользователя, от которого будет запускаться PHP и сокеты.
 Добавляем в файл <code class="highlighter-rouge">/etc/php/fpm-php7.1/fpm.d/www.conf</code> следующее:</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">www</span><span class="p">]</span>
 <span class="nx">user</span> <span class="o">=</span> <span class="nx">nginx</span>
@@ -328,7 +328,7 @@ include /etc/nginx/sites-enabled/*;
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>upstream backend-site1 {server unix:/var/run/php/fcgi-php.sock;}
 server {
 listen 80;
-#ssl использовать не будем) но если надо можно раскоментить (убрав #)
+#ssl использовать не будем), но если нужно, можно раскомментить (убрав #)
 #И создать сертификаты, а также файлы логов
 #listen 443 ssl;
 #ssl_certificate /etc/nginx/server.crt;
@@ -364,10 +364,10 @@ location / {
 
 }
 </code></pre></div></div>
-<p>Теперь осталось создать нужные файлы и папки и Закинуть свой сайт. 
+<p>Теперь осталось создать нужные файлы и папки и закинуть свой сайт. 
 Выдать права на <code class="highlighter-rouge">/var/www</code> коммандой <code class="highlighter-rouge">chown -R nginx: /var/www/*</code>.</p>
 <h1 id="добавляем-демоны-в-авто-загрузку">Добавляем демоны в авто загрузку:</h1>
-<p>Чтобы при каждой загрузке сервера не запускать все руками скажем openrc делать это самому.</p>
+<p>Чтобы при каждой загрузке сервера не запускать все руками, скажем openrc делать это самому.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ <span class="c"># rc-update add nginx default</span>
 ~ <span class="c"># rc-update add php-fpm default</span>
 </code></pre></div></div>
